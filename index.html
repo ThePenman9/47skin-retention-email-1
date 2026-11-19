@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="theme-color" content="#f5f7fb" />
+ <meta name="description" content="An interactive portfolio demonstration of a 47 Skin serum welcome email inside a simulated inbox." />
+ <title>Inbox | 47 Skin Email Portfolio</title>
+ <style>
+  /* Static fallback: avoid a blank page even if JavaScript or its dependencies fail. */
+  #root:not(:has(.app-frame)){min-height:100vh;background:#f4f7fb;font-family:Arial,sans-serif;color:#253142}
+  .fallback-head{display:flex;align-items:center;gap:25px;padding:21px 28px;background:#f4f7fb;color:#6c7789}.fallback-head strong{font-size:25px;color:#ce5149}.fallback-search{background:#e4ecf8;border-radius:30px;padding:16px 24px;flex:1;max-width:720px}
+  .fallback-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:16px;padding:0 16px}.fallback-side{padding:26px 18px;color:#6c7789}.fallback-side p{padding:14px;border-radius:18px}.fallback-side .selected{background:#dbe8f8;color:#254e83}.fallback-main{background:#fff;border-radius:16px;min-height:75vh;overflow:hidden}.fallback-toolbar{padding:25px;border-bottom:1px solid #eee;color:#748092}.fallback-mail{padding:20px 25px;border-bottom:1px solid #eee;display:grid;grid-template-columns:180px 1fr 80px;gap:10px;align-items:center;background:#f8f9fa;font-size:14px}.fallback-mail:first-child{background:#fff}.fallback-mail button{border:0;text-align:left;background:transparent;font:inherit;cursor:pointer;color:#212a35}.fallback-view{padding:30px;max-width:780px;margin:auto}.fallback-brand{background:#18232b;color:#fff;padding:30px 45px;font:34px Georgia,serif}.fallback-img{display:block;width:100%;max-height:290px;object-fit:cover}.fallback-copy{padding:28px 45px;line-height:1.85}.fallback-cta{display:inline-block;background:#18232b;color:white;padding:12px 20px;margin-top:15px;text-decoration:none}.fallback-back{margin-bottom:24px;border:0;background:#e8edf2;padding:10px 20px;cursor:pointer}.fallback-note{color:#7b838d;font-size:11px}
+  @media(max-width:650px){.fallback-layout{display:block;padding:0}.fallback-side{display:none}.fallback-main{border-radius:0}.fallback-mail{grid-template-columns:1fr 50px}.fallback-mail strong{grid-column:1/-1}.fallback-head{padding:15px}.fallback-mail{padding:15px}.fallback-copy{padding:22px}}
+ </style>
+</head>
+<body>
+ <div id="root">
+  <div class="fallback-head"><strong>Mail</strong><div class="fallback-search">Search mail</div><span>Portfolio</span></div>
+  <div class="fallback-layout"><aside class="fallback-side"><p class="selected">Inbox &nbsp; 1</p><p>Starred</p><p>Snoozed</p><p>Sent</p><p>Drafts</p></aside>
+   <main class="fallback-main" id="fallback-main"><div class="fallback-toolbar">Inbox · Primary</div>
+   <div class="fallback-mail"><strong>The 47 Skin team</strong><button data-campaign-open>Your first steps with the 47 Skin serum — How to apply it, what to check and where to find the full details.</button><span>10:24 AM</span></div>
+   <div class="fallback-mail"><strong>Studio Notes</strong><span>Your creative digest — A few ideas for the week ahead.</span><span>9:10 AM</span></div>
+   <div class="fallback-mail"><strong>Northside Books</strong><span>Your weekend reading list</span><span>Yesterday</span></div>
+   <div class="fallback-mail"><strong>City Guide</strong><span>This week around town</span><span>Wed</span></div>
+   <div class="fallback-mail"><strong>The Sunday Edit</strong><span>A little inspiration</span><span>Tue</span></div>
+   <div class="fallback-mail"><strong>Home Journal</strong><span>A fresh perspective</span><span>Mon</span></div>
+  </main></div>
+ </div>
+ <script>
+ (function(){var main=document.getElementById('fallback-main');if(!main)return;var inbox=main.innerHTML;document.addEventListener('click',function(e){if(e.target.closest('[data-campaign-open]')){main.innerHTML='<div class="fallback-view"><button class="fallback-back" data-fallback-back>← Back to Inbox</button><h2>Your first steps with the 47 Skin serum</h2><p class="fallback-note">The 47 Skin team · Sample message · no real delivery date</p><div class="fallback-brand">47 SKIN</div><img class="fallback-img" src="/assets/editorial-mirror.png" alt="Real skin editorial portrait"/><div class="fallback-copy"><p>Hello,</p><p>We\'re glad you\'ve chosen the 47 Skin Anti-Blemish &amp; Scar Repair Serum.</p><p>As you get started, here\'s what you need to know to make it part of your routine.</p><p>After cleansing, apply 1–2 pumps to your face and neck, morning and evening. Gently smooth it over your skin, keeping it away from the eye area.</p><img src="/assets/47skin-authentic-serum.png" alt="47 Skin serum packaging" style="width:100%;max-width:300px;display:block;margin:20px auto"/><p>One important ingredient note before you begin: the formula contains chitosan derived from shellfish, so it isn\'t suitable for anyone with a shellfish allergy. You can find the complete ingredient list on the product page.</p><p>And if you ever need a reminder about how to use your serum or want to revisit its ingredients, we\'ve put all the details in one place.</p><a class="fallback-cta" href="https://47skin.com/products/anti-blemish-scar-repair-serum" target="_blank" rel="noopener noreferrer">View your serum guide →</a><p>Warmly,</p><p>The 47 Skin team</p></div></div>';main.scrollTop=0;}if(e.target.closest('[data-fallback-back]')){main.innerHTML=inbox;main.scrollTop=0;}})})();
+ </script>
+ <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
